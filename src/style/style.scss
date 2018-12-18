@@ -1,0 +1,134 @@
+// WISESIGHT STYLE
+
+// LAY OUT
+.section {
+  background-color: bisque;
+  background-color: #B73330;
+  background-color: #A42126;
+  background-color: #AB2228;
+  background-image: linear-gradient(#AB2228,  #310606);
+  background-attachment: fixed;
+  min-height: calc(100vh - 52px);
+}
+.box {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 600px;
+}
+.notification a {
+  text-decoration: none !important;
+}
+
+// FLEX
+.flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.flex-centered__row {
+  @extend .flex-centered;
+  flex-direction: row;
+}
+.flex-wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+// MARGIN & PADDING
+@for $i from 0 through 20 {
+  .padding-#{$i} {
+    padding: #{$i}px;
+  }
+  .margin-#{$i} {
+    margin: #{$i}px;
+  }
+  .margin-#{$i}-auto {
+    margin: #{$i}px auto;
+  }
+  .padding-#{$i}rem {
+    padding: #{$i}rem;
+  }
+}
+
+// RESPONSIVE
+.is-fullwidth {
+  width: 100%;
+}
+
+
+// ANIMETION
+.anime-x {
+  transition-duration: 400ms;
+  &:hover {
+    transform: translateX(15px);
+    margin-right: .5rem;
+  }
+}
+.anime-big {
+  transition-duration: 500ms;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.anime-rotate-r {
+  transition-duration: 500ms;
+  &:hover {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes frame-fade-up {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.transition-fade-up {
+  transition: all 500ms ease;
+  -webkit-animation-name: frame-fade-up; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+  animation-name: frame-fade-up;
+  animation-duration: 1s;
+}
+
+// transition
+
+
+
+// FONT
+@mixin font-face($fontName, $fileName, $path, $weight:normal, $style:normal) {
+  @font-face {
+    font-family: $fontName;
+    // src: url($path+$fileName+'.eot');
+    src: 
+          // url($path+$fileName+'.eot?') format('embedded-opentype'),
+          // url($path+$fileName+'.woff') format('woff'),
+          // url($path+$fileName+'.woff2') format('woff2'),
+          url($path+$fileName+'.ttf') format('truetype'),
+          // url($path+$fileName+'.svg#svgFontName') format('svg')
+          ;
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+// @include font-face("BangnaNew", "bangna-new", "./font/");
+// @include font-face("Domino", "WP_DOMINO_novel", "./font/");
+// @include font-face("ThaiSansLite", "thaisanslite_r1", "./font/");
+// @include font-face("Kunlasatri", "Kunlasatri", "./font/");
+// @include font-face("Kunlasatri", "Kunlasatri-Bold", "./font/", bold);
+// @include font-face("Kunlasatri", "Kunlasatri-Light", "./font/", lighter);
+// @include font-face("Ekkamai", "EkkamaiStandard-Light", "./font/", lighter);
+@include font-face("Ekkamai", "EkkamaiStandard-Light", "./font/", lighter);
+// @include font-face("Quark", "Quark-Light", "./font/");
+// @include font-face("Quark", "Quark-Bold", "./font/", "bold");
+
+html * {
+  // font-size: 16px;
+  // font-size: 20px;
+  //  color: #000 !important;
+  font-family: Ekkamai, Kunlasatri, Domino, ThaiSansLite, BangnaNew !important;
+}
+
+.monospace, pre, code {
+  font-family: monospace !important;
+}

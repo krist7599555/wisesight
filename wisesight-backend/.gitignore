@@ -1,0 +1,4 @@
+config.js
+*.jpg
+node_modules
+idea.md
